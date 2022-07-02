@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ingredientSchema = new mongoose.Schema(
+const IngredientSchema = new mongoose.Schema(
     {
         trueProductName: {
             type: String,
@@ -39,4 +39,4 @@ const ingredientSchema = new mongoose.Schema(
           
     });
 
-mongoose.model("Ingredient", ingredientSchema);
+mongoose.model("Ingredient", IngredientSchema);

@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+mongoose.connect.id;
+
 
 const vendorSchema = new Schema({
     name: {

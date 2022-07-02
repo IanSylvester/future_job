@@ -28,16 +28,6 @@ const UserSchema = new mongoose.Schema(
       minLength: 2,
       maxLength: 25
     },
-    Organisation: {
-      type: new mongoose.Schema({
-        name: {
-          type: String,
-          required: true,
-          minLength: 3,
-          maxLength: 255
-        }
-      })
-    }
   },
   { timestamps: true }
 );

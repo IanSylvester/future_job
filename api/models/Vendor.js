@@ -1,7 +1,7 @@
 
 const mongoose = require("mongoose");
 
-const vendorSchema = new mongoose.Schema({
+const VendorSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -26,8 +26,11 @@ const vendorSchema = new mongoose.Schema({
     },
     vendorRep: {
         type: Schema.Types.ObjectId,
-        ref: "VendorRep"
+        
+        
+
+
     },
 });
 
-module.exports = mongoose.model("Vendor", vendorSchema);
+module.exports = mongoose.model("Vendor", VendorSchema);
