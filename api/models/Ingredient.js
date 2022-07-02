@@ -1,19 +1,42 @@
 const mongoose = require("mongoose");
 
-const IngredientSchema = new mongoose.Schema(
-  {
-    productName: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    productSku: {
-      type: String,
-      required: false,
-      unique: true,
-    },
-  },
-  { timestamps: true }
-);
+const ingredientSchema = new mongoose.Schema(
+    {
+        trueProductName: {
+            type: String,
+            required: true
+        },
+        productNickname: {
+            type: String,
+            required: false,
+            minlength: 3,
+            maxlength: 255
+        },
+        productPrice: {
+            type: Number,
+            required: true
+        },   
+        productBrand: {
+            type: String,
+            required: false
+        },
+        productSKU: {
+            type: String,
+            required: false,
+        },
+        vendor: {
+            type: Schema.Types.ObjectId,
+            ref: "Vendor"
+        },
+        category: {
+            type: Schema.Types.ObjectId,
+            ref: "Category"
+        },
+        subCategory: {
+            type: Schema.Types.ObjectId,
+            ref: "SubCategory"
+        }
+          
+    });
 
-module.exports = mongoose.model("Ingredient", IngredientSchema)
+mongoose.model("Ingredient", ingredientSchema);
