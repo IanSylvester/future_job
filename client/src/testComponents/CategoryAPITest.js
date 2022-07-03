@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import React from "react";
-import CategoryAPI from "../apiCalls/classes/CategoryAPI";
+import { Context } from "../ContextProvider";
 
 const CategoryAPITest = () => {
-  const [categories, setCategories] = useState();
-
-  useEffect(() => {
-    CategoryAPI.getAll().then((data) => setCategories(data));
-  }, []);
+  const context = useContext(Context);
+  const {categories} = context;
+  
   return (
     <div>
       {categories &&
