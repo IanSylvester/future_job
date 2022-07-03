@@ -24,13 +24,10 @@ const VendorSchema = new mongoose.Schema({
         minlength: 3,
         maxlength: 255
     },
-    vendorRep: {
+    vendorRep_id: {
         type: Schema.Types.ObjectId,
-        
-        
-
-
-    },
+        ref: "VendorRep" 
+    }
 });
 
 module.exports = mongoose.model("Vendor", VendorSchema);

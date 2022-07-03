@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const IngredientSchema = new mongoose.Schema({
+const ProductSchema = new mongoose.Schema({
   trueProductName: {
     type: String,
     required: true,
@@ -23,18 +23,18 @@ const IngredientSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  vendor: {
+  vendor_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Vendor",
   },
-  category: {
+  category_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Category",
   },
-  subCategory: {
+  subCategory_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "SubCategory",
   },
 });
 
-module.exports = mongoose.model("Ingredient", IngredientSchema);
+module.exports = mongoose.model("Product", ProductSchema);

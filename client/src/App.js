@@ -6,7 +6,7 @@ function App() {
       <h1>Hello World</h1>
 
       {/* uncomment the line below to test the test components */}
-      {/* <TestComponents /> */}
+      <TestComponents />
     </div>
   );
 }
