@@ -2,6 +2,7 @@ import {
   fetchAllProducts,
   fetchAllProductsByCategory,
   fetchAllProductsBySubCategory,
+  fetchAllProductsByVendor,
   createProduct,
 } from "../queries/productQueries";
 
@@ -17,6 +18,9 @@ class ProductAPI {
   }
   getAllBySubCategory(id) {
     return fetchAllProductsBySubCategory(`${this.prefix}/${id}`);
+  }
+  getAllByVendor(id) {
+    return fetchAllProductsByVendor(`${this.prefix}/${id}`);
   }
   add(obj) {
     return createProduct(this.prefix, obj)
