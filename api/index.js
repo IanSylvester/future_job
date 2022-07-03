@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 // Import routes
 const userRoutes = require("./routes/userRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
-const ingredientRoutes = require("./routes/ingredientRoutes");
+const ingredientRoutes = require("./routes/productRoutes");
 
 const app = express();
 const port = process.env.PORT || 5000;
