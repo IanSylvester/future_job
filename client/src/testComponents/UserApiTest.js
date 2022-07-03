@@ -4,7 +4,7 @@ import { Context } from "../ContextProvider";
 
 const UserApiTest = () => {
   const context = useContext(Context);
-  const {users, setUsers} = context;
+  const {users} = context;
 
   return (
     <div>
