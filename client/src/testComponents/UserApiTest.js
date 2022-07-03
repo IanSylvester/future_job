@@ -1,13 +1,10 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import React from "react";
-import UserAPI from "../apiCalls/classes/UserAPI";
+import { Context } from "../ContextProvider";
 
 const UserApiTest = () => {
-  const [users, setUsers] = useState();
-
-  useEffect(() => {
-    UserAPI.getAll().then((data) => setUsers(data));
-  }, []);
+  const context = useContext(Context);
+  const {users, setUsers} = context;
 
   return (
     <div>

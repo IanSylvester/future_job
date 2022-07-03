@@ -1,38 +1,26 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { Context } from "../ContextProvider";
 import React from "react";
 import ProductAPI from "../apiCalls/classes/ProductAPI";
 
 const ProductAPITest = () => {
-  const [products, setProducts] = useState();
-  const [productByCategory, setProductByCategory] = useState();
-  const [newProduct, setNewProduct] = useState({
-    trueProductName: "",
-    productPrice: 0,
-    category_id: "",
-  });
-
-  useEffect(() => {
-    ProductAPI.getAll().then((data) => setProducts(data));
-    ProductAPI.getAllByCategory("62c0c4f9626e095e54f4b6cf").then((data) =>
-      setProductByCategory(data)
-    );
-  }, []);
+  const context = useContext(Context);
+  const { products, newProduct, setNewProduct } = context;
 
   const handleChange = (e) => {
     setNewProduct({
-        ...newProduct, 
-        [e.target.name]: e.target.value
-    })
-    console.log(newProduct);
+      ...newProduct,
+      [e.target.name]: e.target.value,
+    });
+    // console.log(newProduct);
   };
+
   const handleSubmit = (e) => {
-    e.preventDefault()
-    ProductAPI.add(newProduct)
-   
+    e.preventDefault();
+    ProductAPI.add(newProduct);
   };
 
-
-  console.log(productByCategory);
+  // console.log(productByCategory);
   return (
     <div>
       {products &&
