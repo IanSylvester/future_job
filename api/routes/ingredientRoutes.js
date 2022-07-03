@@ -1,33 +1,33 @@
 const express = require("express");
 const router = express.Router();
-const Ingredient = require("../models/Ingredient");
+const Product = require("../models/Ingredient");
 
-// Get all ingredients
+// Get all products
 router.get("/", async (req, res) => {
-  const ingredients = await Ingredient.find();
+  const products = await Product.find();
   try {
-    res.status(200).json(ingredients);
+    res.status(200).json(products);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// get all ingredient by category
+// get all products by category
 router.get("/:category", async (req, res) => {
-  const ingredients = await Ingredient.find({ category: req.params.category });
+  const products = await products.find({ category: req.params.category });
   try {
-    res.status(200).json(ingredients);
+    res.status(200).json(products);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Create Ingredient
+// Create Product
 router.post("/", async (req, res) => {
-  const newIngredient = new Ingredient(req.body);
+  const newProduct = new Product(req.body);
   try {
-    const savedIngredient = await newIngredient.save();
-    res.status(200).json(savedIngredient);
+    const savedProduct = await newProduct.save();
+    res.status(200).json(savedProduct);
   } catch (err) {
     res.status(500).json(err);
   }

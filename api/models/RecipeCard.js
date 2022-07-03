@@ -7,10 +7,10 @@ const RecipeCardSchema = new mongoose.Schema({
         minlength: 3,
         maxlength: 255
     },
-    ingredients: [
+    ingredients_id: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Ingredient",
+            ref: "Product",
             amount: {
                 type: Number,
                 required: true
