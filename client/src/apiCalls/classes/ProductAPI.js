@@ -12,7 +12,7 @@ class ProductAPI {
     return fetchAllProducts(this.prefix);
   }
   getAllByCategory(id) {
-    return fetchAllProductsByCategory(`${this.prefix}/${id}`);
+    return fetchAllProductsByCategory(`${this.prefix}/category/${id}`);
   }
   add(obj) {
     return createProduct(this.prefix, obj)
