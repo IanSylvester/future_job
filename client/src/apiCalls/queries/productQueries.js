@@ -10,6 +10,18 @@ export const fetchAllProductsByCategory = async (url) => {
   return products;
 };
 
+export const fetchAllProductsBySubCategory = async (url) => {
+  const res = await fetch(url);
+  const products = await res.json();
+  return products;
+};
+
+export const fetchAllProductsByVendor = async (url) => {
+  const res = await fetch(url);
+  const products = await res.json();
+  return products;
+};
+
 export const createProduct = async (url, obj) => {
   const res = await fetch(url, {
     method: "POST",
@@ -18,7 +30,7 @@ export const createProduct = async (url, obj) => {
     },
     body: JSON.stringify(obj),
   });
+
   const newProduct = await res.json();
   return newProduct;
 };
-
