@@ -14,13 +14,13 @@ class ProductAPI {
     return fetchAllProducts(this.prefix);
   }
   getAllByCategory(id) {
-    return fetchAllProductsByCategory(`${this.prefix}/${id}`);
+    return fetchAllProductsByCategory(`${this.prefix}/category/${id}`);
   }
   getAllBySubCategory(id) {
-    return fetchAllProductsBySubCategory(`${this.prefix}/${id}`);
+    return fetchAllProductsBySubCategory(`${this.prefix}/subCategory/${id}`);
   }
   getAllByVendor(id) {
-    return fetchAllProductsByVendor(`${this.prefix}/${id}`);
+    return fetchAllProductsByVendor(`${this.prefix}/vendor/${id}`);
   }
   add(obj) {
     return createProduct(this.prefix, obj)
