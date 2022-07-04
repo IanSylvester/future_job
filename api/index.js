@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const userRoutes = require("./routes/userRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const productRoutes = require("./routes/productRoutes");
+const subCategoryRoutes = require("./routes/subCategoryRoutes");
 const vendorRoutes = require("./routes/vendorRoutes");
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 app.use('/users', userRoutes);
 app.use('/categories', categoryRoutes);
 app.use('/products', productRoutes);
+app.use('/subCategories', subCategoryRoutes);
 app.use('/vendors', vendorRoutes);
 
 const mongoose = require("mongoose");
