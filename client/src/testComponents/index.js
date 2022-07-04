@@ -4,13 +4,15 @@ import React from "react";
 import UserApiTest from "./UserApiTest";
 import CategoryAPITest from "./CategoryAPITest";
 import ProductAPITest from "./ProductAPITest";
+import SubCategoryAPITest from "./SubCategoryAPITest";
 
 const TestComponents = () => {
   return (
     <div>
-      <UserApiTest />
+      {/* <UserApiTest />
       <CategoryAPITest/>
-      <ProductAPITest/>
+      <ProductAPITest/> */}
+      <SubCategoryAPITest />
     </div>
   );
 };

@@ -17,4 +17,4 @@ class SubCategoryAPI {
         return fetchAllSubCategoriesByCategory(`${this.prefix}/${id}`);
     }
 }
-export default subCategoryAPI = new SubCategoryAPI();
+export default SubCategoryAPI = new SubCategoryAPI();
