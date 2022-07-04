@@ -27,17 +27,17 @@ const VendorSchema = new mongoose.Schema({
     required: false,
     email: {
       type: String,
-      required: true,
+      required: false,
       unique: true,
     },
     phone: {
       type: String,
-      required: true,
+      required: false,
       unique: true,
     },
     name: {
       type: String,
-      required: true,
+      required: false,
       minlength: 3,
       maxlength: 255,
     },
